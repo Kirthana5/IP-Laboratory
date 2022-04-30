@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Form</h1>
+    
+    <div class="container">
+        
+        <form name="myform" action="" target="blank" onsubmit="validateForm()">
+            <p>What type of car would you like to buy?</p>
+
+            <input type="radio" id="carName" name="carName" value="Proton">
+            <label for="carName">Proton</label>
+            <input type="radio" id="carName" name="carName" value="Honda">
+            <label for="carName">Honda</label>
+            <input type="radio" id="carName" name="carName" value="Ferri">
+            <label for="carName">Ferri</label>
+            <input type="radio" id="carName" name="carName" value="Ford">
+            <label for="carName">Ford</label>
+
+           <br><br>
+
+           <label for="colorPick">What color do you want on car?</label><br>
+           <select name="colors" id="colorPick">
+                <option value="Pick a Color">Pick a Color</option>
+                <option value="Pink">Pink</option>
+                <option value="Red">Red</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Orange">Orange</option>
+                <option value="Purple">Purple</option>
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+            </select>
+
+            <label for="Other">Other</label>
+            <input type="text" id="Other" name="Other">
+
+            <br><br>
+
+            <label for="specification">Enter other specification for ur preferred car:</label><br>
+            <textarea name="specification" id="specification" style="width: 250px;"></textarea>
+
+            <p>Tell us how to get in touch with u:</p>
+
+            <label for="Name">Name</label>
+            <input type="text" id="Name" name="UserName" onblur="checkName()" onfocus="resetName()" placeholder="Enter your name here">
+            
+            <br><br>
+
+            <label for="phone">Phone no.</label>
+            <input type="text" name="phone" id="phone" onblur="checkPhone()" onfocus="resetPhone()">
+    
+            <br><br>
+    
+            <label for="email">Mail Id</label>
+            <input type="email" name="email" id="email"  onblur="checkMail()" onfocus="resetMail()" placeholder="abc@gmail.com">
+    
+            <br><br>
+
+            <input type="checkbox" name="checkBox" id="contactCheck">Please contact me as soon as possible.
+
+    
+            <p>My Mail:<a href="mailto:kirthana@gmail.com">kirthana@gmail.com</a></p>
+            <button type="submit" class="signupbtn" >Submit</button>
+            <button type="button" class="cancelbtn" onclick="reset()">Clear</button>
+
+            <br><br>
+
+            <a href="mailto:kirthana@gmail.com">Back to Mail Page</a></p>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
