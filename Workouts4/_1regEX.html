@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+    <style>
+        pre{
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+        }
+    </style>
+</head>
+<body>
+    <h2>Regular Expression</h2>
+    <p>The quick brown fox jumped over the lazy dog</p>
+    <pre id="ex1"></pre>
+    <hr>
+    <p>A1B2C3D4E5F6G7H8I9J10</p>
+    <pre id="ex2"></pre>
+    <hr>
+    <p>The salad costs $9.99</p>
+    <pre id="ex3"></pre>
+    <hr>
+    <p>Contact customer support on 0800 300 500</p>
+    <pre id="ex4"></pre>
+    <hr>
+    <p>You can contact me on Twitter @abc or abc@gmail.com</p>
+    <pre id="ex5"></pre>
+    <hr>
+    <script>
+        const ex1 = 'The quick brown fox jumped over the lazy dog';
+        const ex2 = 'A1B2C3D4E5F6G7H8I9J10';
+        const ex3 = 'The salad costs $9.99';
+        const ex4 = 'Contact customer support on 0800 300 500';
+        const ex5 = 'You can contact me on Twitter @abc or abc@gmail.com';
+
+        document.getElementById("ex1").innerHTML="3 letter words are: "+ex1.match(/\b[a-zA-Z]{3}\b/g);
+
+        document.getElementById("ex2").innerHTML="Replacing all numbers: "+ex2.replaceAll(/[0-9]/g,'');
+
+        document.getElementById("ex3").innerHTML="Monetary value: "+ex3.match(/\$[0-9]+.([0-9]*)/g);
+
+        document.getElementById("ex4").innerHTML="Telephone number: "+ex4.match(/\d{4}\s\d{3}\s\d{3}/g);
+
+        document.getElementById("ex5").innerHTML="Email: "+ex5.match(/[a-z0-9]+@[a-z]+.[a-z]{2,5}/g);
+    </script>
+</body>
+</html>
