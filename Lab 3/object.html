@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript program</title>
+</head>
+<body>
+	<h1>Object</h1>
+    <div id="average"></div>
+    <br><hr><br>
+    <pre id="olderthan30"></pre>
+    <br><hr><br>
+    <pre id="fullname"></pre>
+    <br><hr><br>
+    <pre id="sortAge"></pre>
+    <br><hr><br>
+    <pre id="countInDept">Count in Departments is displayed in Console</pre>
+</body>
+<script>
+	const people = [
+                { firstName: 'Sam', lastName: 'Hughes', DOB: '07/07/1978', department: 'Development', salary: '45000' },
+
+                { firstName: 'Terri', lastName: 'Bishop', DOB: '02/04/1989', department: 'Development', salary: '35000' },
+
+                { firstName: 'Jar', lastName: 'Burke', DOB: '11/01/1985', department: 'Marketing', salary: '38000' },
+
+                { firstName: 'Julio', lastName: 'Miller', DOB: '12/07/1991', department: 'Sales', salary: '40000' },
+
+                { firstName: 'Chester', lastName: 'Flores', DOB: '03/15/1988', department: 'Development', salary: '41000' },
+
+                { firstName: 'Madison', lastName: 'Marshall', DOB: '09/22/1980', department: 'Sales', salary: '32000' },
+
+                { firstName: 'Ava', lastName: 'Pena', DOB: '11/02/1986', department: 'Development', salary: '38000' },
+
+                { firstName: 'Gabriella', lastName: 'Steward', DOB: '08/26/1994', department: 'Marketing', salary: '46000' },
+
+                { firstName: 'Charles', lastName: 'Campbell', DOB: '09/04/1977', department: 'Sales', salary: '42000' },
+
+                { firstName: 'Tiffany', lastName: 'Lambert', DOB: '05/11/1990', department: 'Development', salary: '34000' },
+
+                { firstName: 'Antonio', lastName: 'Gonzalez', DOB: '03/24/1985', department: 'Office Management', salary: '49000' },
+
+                { firstName: 'Aaron', lastName: 'Garrett', DOB: '09/04/1985', department: 'Development', salary: '39000' },
+
+            ];
+	//Average 
+
+	const average = () => {
+   	let total = 0;
+   	for(let i=0; i < people.length; i++) {
+       		total = total + parseInt(people[i].salary);
+  	 }
+   	return total / people.length;
+					}
+        document.getElementById("average").innerHTML=("Average salary : "+average());
+
+	//People older than 30
+
+	const olderThan30 = [];
+	for(let i = 0; i < people.length; i++) {
+    	if((new Date().getFullYear() - new Date(people[i].DOB).getFullYear()) > 30 ) {
+        	olderThan30.push(people[i])
+   	 }}
+    var old30="People older than 30\n";
+    for(let i=0;i<olderThan30.length;i++)
+    {
+        old30+="{\n\tName: "+(olderThan30[i].firstName+" "+olderThan30[i].lastName)+"\n\tDOB: "+olderThan30[i].DOB+"\n\tDepartment: "+olderThan30[i].department+"\n\tSalary: "+olderThan30[i].salary+"\n}\n";
+    }
+    document.getElementById("olderthan30").innerHTML=old30;
+
+	//People's full name
+
+	const fullName = [];
+	for(i=0; i < people.length; i++) {
+    	fullName.push(`${people[i].firstName} ${people[i].lastName}`)}
+    var full="Full Name\n";
+    for(let i=0;i<fullName.length;i++)
+    {
+        full+="\n"+(i+1)+"\t"+fullName[i];
+    }
+    document.getElementById("fullname").innerHTML=full;
+
+	//People from youngest to oldest
+
+	const oldest = people.sort((a, b) => new Date(b.DOB) - new Date(a.DOB))
+    var youngToOld="People from Youngest to Oldest\n";
+    for(let i=0;i<oldest.length;i++)
+    {
+        youngToOld+="\n"+(i+1)+"\t"+(oldest[i].firstName+" "+oldest[i].lastName+"\n\tAge: "+(new Date().getFullYear()-new Date(oldest[i].DOB).getFullYear()));
+    }
+    document.getElementById("sortAge").innerHTML=youngToOld;
+
+	//People count in each department
+
+	const departments= {};
+	people.forEach(person => 
+    	!departments[person.department] ?  departments[person.department] = 1 
+    	: departments[person.department] += 1);
+	console.table(departments);
+
+</script>
+</html> 
