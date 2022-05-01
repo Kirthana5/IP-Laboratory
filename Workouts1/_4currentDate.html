@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Date</title>
+</head>
+<body>
+    <h2>JavaScript Program to get the current date</h2>
+    <br>
+    <label for="input">Enter Separator:</label>
+    <input type="text" name="input" id="input">
+    <br><br>
+    <input type="submit" value="Get Current date" onclick="getCurrentDate(document.getElementById('input').
+    value)">
+    <pre id="getCurrentDate" style="font-family: 'Times New Roman', Times, serif;"></pre>
+
+    <script>
+        function getCurrentDate(separator)
+        {
+            var todayDate=new Date();
+            var date=todayDate.getDate();
+            var month=todayDate.getMonth()+1;
+            var year=todayDate.getFullYear();
+
+            if(date<10)
+            {
+                date="0"+date;
+            }
+            if(month<10)
+            {
+                month="0"+month;
+            }
+            
+            document.getElementById("getCurrentDate").innerHTML="Current Date: "+date+separator+month+separator+year;
+        }
+    </script>
+</body>
+</html>

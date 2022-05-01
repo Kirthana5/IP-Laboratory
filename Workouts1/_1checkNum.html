@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Number</title>
+</head>
+<body>
+    <h2>Javascript program to check two numbers and return true if one of the number is 100 or if the sum of the two numbers is 100</h2>
+    <br>
+    <label for="input1">Input 1</label>
+    <input type="text" id="input1">
+    <br><br>
+    <label for="input2">Input 2</label>
+    <input type="text" id="input2">
+
+    <br><br>
+
+    <input type="submit" value="submit" onclick="check()">
+
+    <br><br>
+
+    <p id="result"></p>
+
+    <script>
+        function check(){
+            var num1=parseInt(document.getElementById("input1").value);
+            var num2=parseInt(document.getElementById("input2").value);
+
+            function check100(n1,n2)
+            {
+                return (n1==100 || n2==100) || (n1+n2)==100;
+            }
+
+            if(check100(num1,num2))
+            {
+                document.getElementById("result").innerHTML="Result: True";
+            }
+            else{
+                document.getElementById("result").innerHTML="Result: false";
+            }
+        }
+    </script>
+</body>
+</html>

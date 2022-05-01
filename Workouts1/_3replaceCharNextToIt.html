@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replace Character</title>
+</head>
+<body>
+    <h2>Javascript program to replace every character in a given string with the character following it in the alphabet</h2>
+    <br>
+    <label for="input">Enter String:</label>
+    <input type="text" name="input" id="input">
+    <br><br>
+    <input type="submit" value="Replace" onclick="replaceCharacter(document.getElementById('input').
+    value)">
+    <pre id="replaceChar" style="font-family: 'Times New Roman', Times, serif;"></pre>
+
+    <script>
+        function replaceCharacter(string)
+        {
+            var charArray=string.split('');
+            for(let i=0;i<charArray.length;i++)
+            {
+                switch(charArray[i])
+                {
+                    case '':
+                        break;
+                    case 'Z':
+                        charArray[i]='A';
+                        break;
+                    case 'z':
+                        charArray[i]='a';
+                        break;
+                    default:
+                        charArray[i]=String.fromCharCode(1+charArray[i].charCodeAt(0));
+                        break;
+                }
+            }
+            document.getElementById("replaceChar").innerHTML="Output: "+charArray.join('');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sort String</title>
+</head>
+<body>
+    <h2>Javascript Write a JavaScript function that returns a passed String with letters in alphabetical order.</h2>
+    <br>
+    <label for="input">Enter String:</label>
+    <input type="text" name="input" id="input">
+    <br><br>
+    <input type="submit" value="Sort string" onclick="sortString(document.getElementById('input').
+    value)">
+    <pre id="sortString" style="font-family: 'Times New Roman', Times, serif;"></pre>
+
+    <script>
+        function sortString(string)
+        {
+            var charArray=string.split('');
+            var temp;
+            for(let i=0;i<charArray.length;i++)
+            {
+                for(let j=0;j<charArray.length;j++)
+                {
+                    if(charArray[i]<charArray[j])
+                    {
+                        temp=charArray[i];
+                        charArray[i]=charArray[j];
+                        charArray[j]=temp;
+                    }
+                }
+            }
+            document.getElementById('sortString').innerHTML="New String: "+charArray.join('');
+        }
+    </script>
+</body>
+</html>

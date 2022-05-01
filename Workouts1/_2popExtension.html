@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extract Extension</title>
+</head>
+<body>
+    <h2>Javascript program to get the extension of a filename</h2>
+    <br>
+    <label for="fName">Enter Filename:</label>
+    <input type="text" name="filename" id="fName">
+    <br><br>
+    <input type="submit" value="Get Extension" onclick="getExtension(document.getElementById('fName').
+    value)">
+    <pre id="extension" style="font-family: 'Times New Roman', Times, serif;"></pre>
+    <script>
+        function getExtension(fname)
+        {
+            document.getElementById("extension").innerHTML="Extension of the file "+fname+":\t"+fname.substr(fname.indexOf("."));
+        }
+    </script>
+</body>
+</html>

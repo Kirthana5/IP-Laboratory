@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number nearest to 100</title>
+</head>
+<body>
+    <h2>Javascript program to find out which one is nearest to 100 among the two given values.</h2>
+    <br>
+    <label for="input1">Input 1</label>
+    <input type="text" id="input1">
+    <br><br>
+    <label for="input2">Input 2</label>
+    <input type="text" id="input2">
+
+    <br><br>
+
+    <input type="submit" value="submit" onclick="check()">
+
+    <br><br>
+    
+    <p id="result"></p>
+
+    <script>
+        function check()
+        {
+            var num1=parseInt(document.getElementById('input1').value);
+            var num2=parseInt(document.getElementById('input2').value);
+            document.getElementById("result").innerHTML="Result: "+((Math.abs(100-num1)<Math.abs(100-num2) ) ? num1 : num2);
+        }
+    </script>
+
+</body>
+</html>

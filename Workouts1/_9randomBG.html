@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Background</title>
+</head>
+<body>
+    <h2>JavaScript program to change the background color by generating a random hexadecimal color code</h2>
+    <br>
+    <center><input type="button" value="Toggle Background" style="width: 250px;height: 200px;border-radius: 30%;font-size: x-large;font-family:fantasy;background-color: rgb(177, 125, 225);border: 5px double black;" onclick="toggleBG()"></center>
+
+    <script>
+        function toggleBG()
+        {
+            var code="0123456789ABCDEF";
+            
+            var hexCode="#";
+
+            for(let i=0;i<6;i++)
+            {
+                hexCode+=code[parseInt(Math.random()*16)];
+            }
+
+            document.body.style.backgroundColor=hexCode;
+        }
+    </script>
+</body>
+</html>

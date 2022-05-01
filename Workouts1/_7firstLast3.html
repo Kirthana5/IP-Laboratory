@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First and last 3 characters</title>
+</head>
+<body>
+    <h2>Javascript program to create a new String from a given string the first 3 characters and the last 3 characters of a string and adding them together. The String length must be 3 or more, if not, the original string is returned.</h2>
+    <br>
+    <label for="input">Enter String:</label>
+    <input type="text" name="input" id="input">
+    <br><br>
+    <input type="submit" value="Generate new String" onclick="generateNew(document.getElementById('input').
+    value)">
+    <pre id="generateNew" style="font-family: 'Times New Roman', Times, serif;"></pre>
+
+    <script>
+        function generateNew(string)
+        {
+            if(string.length<3)
+            {
+                document.getElementById('generateNew').innerHTML="New String: "+string;
+            }
+            else{
+                document.getElementById('generateNew').innerHTML="New String: "+string.substr(0,3)+string.substr(string.length-3);
+            }
+        }
+    </script>
+</body>
+</html>
